@@ -10,3 +10,34 @@
   aspect-ratio: 1/1;
   margin: 10px;
 }
+.grid-container{
+  
+}
+
+.grid{
+  border-collapse: collapse;
+  margin-top: 75px;
+  margin-left: 24%;
+}
+
+.cell{
+  width: 100px;
+  border: 1px solid black;
+  vertical-align: top;
+  text-align: left;
+  font-size: 15px;
+  padding: 5px;
+}
+
+.row{
+  height: 80px;
+  
+}
+
+.odd{
+  background-color: rgb(118, 158, 130);
+}
+
+.even{
+  background-color: rgb(143, 182, 166);
+}
