@@ -3,3 +3,10 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+
+.dice{
+  width: 50px;
+  aspect-ratio: 1/1;
+  margin: 10px;
+}
