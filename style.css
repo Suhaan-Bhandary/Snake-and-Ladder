@@ -4,40 +4,63 @@
   box-sizing: border-box;
 }
 
+.main-container{
+  display: flex;
+}
 
-.dice{
+.dice {
+  position: relative;
   width: 50px;
   aspect-ratio: 1/1;
   margin: 10px;
-}
-.grid-container{
-  
+
+  z-index: 1000;
 }
 
-.grid{
+.grid-container {
+  width: 100%;
+  padding: 2rem;
+}
+
+.grid {
   border-collapse: collapse;
-  margin-top: 75px;
-  margin-left: 24%;
+  margin-inline: auto;
+  border: 5px solid black;
 }
 
-.cell{
-  width: 100px;
+.cell {
   border: 1px solid black;
-  vertical-align: top;
-  text-align: left;
-  font-size: 15px;
-  padding: 5px;
+  position: relative;
+
+  width: 55px;
+  height: 55px;
+  font-size: 0.8rem;
+
+  /* To keep border visible */
+  background-clip: padding-box;
+  text-align: center;
 }
 
-.row{
-  height: 80px;
-  
+.cell .cellId {
+  position: absolute;
+  font-size: 0.7rem;
+  top: 5px;
+  left: 5px;
 }
 
-.odd{
+.odd {
   background-color: rgb(118, 158, 130);
 }
 
-.even{
+.even {
   background-color: rgb(143, 182, 166);
 }
+
+svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
