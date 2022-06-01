@@ -8,4 +8,4 @@ dice.target.addEventListener("click", async () => {
   console.log(diceFace);
 });
 
-const grid = new Grid(10);
+const grid = new Grid();
