@@ -16,8 +16,6 @@ class Dice {
 
         count++;
         if (count == diceFaceRolls.length) {
-          this.target.disabled = false;
-
           clearInterval(diceRollInterval);
           resolve(diceFaceRolls[count - 1]);
         }
@@ -26,6 +24,7 @@ class Dice {
   }
 
   resetDice() {
+    this.target.disabled = false;
     this.target.textContent = "Dice";
   }
 }

@@ -64,3 +64,11 @@ svg {
   width: 100%;
 }
 
+.player-circle{
+  fill:rgb(247, 239, 126);
+  stroke: #f7f6f6;
+  stroke-width: 3px;
+  stroke-linejoin: round;
+  transition: 0.25s;
+}
+
