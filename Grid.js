@@ -23,6 +23,10 @@ class Grid {
     window.addEventListener("resize", () => this.gridGenerator(numBox));
   }
 
+  getJumpPoints() { 
+    return this.#jumpPoints;
+  }
+
   linedraw(startCell, endCell, isSnake) {
     // Drawing lines
     const lineOne = startCell.getBoundingClientRect();
