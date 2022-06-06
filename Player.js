@@ -1,6 +1,9 @@
 class Player {
-  constructor() {
+  constructor(id, color) {
     this.position = 1;
+    this.id = id;
+    this.color = color;
+
     this.draw();
 
     window.addEventListener("resize", () =>
@@ -10,26 +13,31 @@ class Player {
 
   updatePosition(steps, jumpPoints) {
     return new Promise((resolve) => {
-      if (this.position + steps > 100) return resolve();
+      if (this.position + steps > 100) return resolve(2);
 
       let oldPosition = this.position;
       this.position = oldPosition + steps;
 
-      for (let i = oldPosition; i <= this.position; i++) {
+      // Here we are using flag to know that we are going in front or back direction
+      let flag = 1;
+      if (this.position < oldPosition) flag = -1;
+
+      for (let i = oldPosition; i * flag <= this.position * flag; i += flag) {
         setTimeout(() => {
           this.setPlayerPosition(i);
 
           if (i == this.position) {
-            if (!jumpPoints.hasOwnProperty(this.position)) return resolve();
-            
+            if (!jumpPoints.hasOwnProperty(this.position)) return resolve(0);
+
             setTimeout(() => {
+              let isLadder = jumpPoints[this.position] - this.position > 0;
               this.position = jumpPoints[this.position];
               this.setPlayerPosition(this.position);
 
-              return resolve();
+              return resolve(isLadder ? 1 : -1);
             }, 300);
           }
-        }, (i - oldPosition) * 300);
+        }, Math.abs(i - oldPosition) * 300);
       }
     });
   }
@@ -43,6 +51,7 @@ class Player {
 
     this.playerCircle = circle;
     this.playerCircle.setAttribute("class", "player-circle");
+    this.playerCircle.setAttribute("fill", this.color);
     this.setPlayerPosition(this.position);
 
     const svgContainer = document.getElementById("playerSvg");
