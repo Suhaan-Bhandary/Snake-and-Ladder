@@ -17,9 +17,9 @@ class Dice {
         count++;
         if (count == diceFaceRolls.length) {
           clearInterval(diceRollInterval);
-          resolve(diceFaceRolls[count - 1]);
+          setTimeout(() => resolve(diceFaceRolls[count - 1]), 500);
         }
-      }, 750);
+      }, 200);
     });
   }
 
