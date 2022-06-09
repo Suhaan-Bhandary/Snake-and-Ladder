@@ -30,11 +30,15 @@ const game = (playerCount) => {
     }
 
     // Get the current player
-    // -1: Snake, 0: Normal, 1: Ladder, 2: cannot move
+    // -1: Snake, 0: Normal, 1: Ladder, 2: cannot move, 100: Winner condition
     let nodeType = await players[currentPlayer].updatePosition(
       steps,
       grid.getJumpPoints()
     );
+
+    if (nodeType === 100) {
+      console.log("Winner");
+    }
 
     // Update the current player to next player
     if (steps != 6) {

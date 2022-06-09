@@ -27,6 +27,7 @@ class Player {
           this.setPlayerPosition(i);
 
           if (i == this.position) {
+            if(this.position == 100) return resolve(100);
             if (!jumpPoints.hasOwnProperty(this.position)) return resolve(0);
 
             setTimeout(() => {
