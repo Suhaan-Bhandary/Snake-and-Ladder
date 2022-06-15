@@ -52,5 +52,13 @@ const game = (playerCount) => {
   });
 };
 
-let playerCount = 3;
-game(playerCount);
+window.addEventListener("load", () => {
+  // Game Loaded Message
+  console.log("Game Loaded");
+
+  // Get the Query Data
+  const urlParams = new URLSearchParams(location.search);
+  let playerCount = urlParams.get("players") || 2;
+
+  game(playerCount);
+});

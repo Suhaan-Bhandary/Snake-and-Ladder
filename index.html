@@ -4,26 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <title>Snake Game</title>
-    <link rel="stylesheet" href="style.css" />
+
+    <!-- Script tag is used to redirect user to the Home Page -->
+    <script>
+      let redirectUrl = window.location.href + "HomeScreen/index.html";
+      window.location = redirectUrl;
+    </script>
   </head>
-  <body>
-    <div class="main-container">
-      <div class="grid-container"></div>
-      <div class="dice-container">
-        <h3>Player : <span id="current-player"></span></h3>
-        <button class="dice" id="dice">Dice</button>
-      </div>
-
-      <svg id="svg"></svg>
-      <svg id="playerSvg"></svg>
-    </div>
-
-    <script src="utils.js"></script>
-    <script src="Player.js"></script>
-    <script src="Grid.js"></script>
-    <script src="Dice.js"></script>
-    <script src="script.js"></script>
-  </body>
+  <body></body>
 </html>
