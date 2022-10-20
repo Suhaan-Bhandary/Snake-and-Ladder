@@ -6,29 +6,49 @@
 
 .main-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  width: 100%;
+  min-height: 100vh;
+  background-color: black;
 }
 
 .dice-container {
+  width: 100%;
   display: flex;
-  justify-content: center;
-  align-items: left;
-  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  color: white;
 }
 
 .dice {
-  position: relative;
-  width: 50px;
-  aspect-ratio: 1/1;
-  margin: 10px 0;
+	position: relative;
+	width: 50px;
+	aspect-ratio: 1/1;
+	margin: 10px 0;
+	z-index: 1000;
+	background-color: #fff;
 
-  z-index: 1000;
+  border: 1px solid black;
+	border-radius: 15px;
+	font-size: 1.5rem;
+	text-align: center;
+	cursor: pointer;
+	height: 50px;
+	line-height: 50px;
+}
+
+.dice:disabled {
+  cursor: default;
+  color: black;
 }
 
 .grid-container {
   /* width: 100%; */
-  padding: 2rem;
+  /* padding: 2rem; */
 }
 
 .grid {
@@ -41,9 +61,10 @@
   border: 1px solid black;
   position: relative;
 
-  width: 55px;
-  height: 55px;
-  font-size: 0.8rem;
+  width: 9.25vw;
+  height: 9.25vw;
+
+  font-size: 0.2rem;
 
   /* To keep border visible */
   background-clip: padding-box;
@@ -79,4 +100,22 @@ svg {
   stroke-width: 3px;
   stroke-linejoin: round;
   transition: 0.25s;
+}
+
+@media (min-width: 35em) {
+  body {
+    /* background-color: red; */
+  }
+}
+
+@media (min-width: 45em) {
+  .cell {
+    width: 4vw;
+    height: 4vw;
+  }
+
+  .dice-container {
+    justify-content: center;
+    gap: 5rem;
+  }
 }
