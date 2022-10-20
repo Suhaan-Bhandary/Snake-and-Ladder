@@ -7,7 +7,19 @@ const game = (playerCount) => {
 
   // A players array to create and store players
   const players = [];
-  const colors = ["red", "green", "blue", "yellow"];
+  const colors = [
+    "#F96167", // red
+    "#CCF381", // Lime Green
+    "#2F3C7E", // blue
+    "yellow",
+    "orange",
+    "#FF69B4",
+    "purple",
+    "lightblue",
+    "black",
+    "brown",
+  ];
+
   for (let i = 0; i < playerCount; i++) {
     players.push(new Player(i, i < colors.length ? colors[i] : "red"));
   }

@@ -1,7 +1,7 @@
 class Dice {
   constructor(diceId) {
     this.target = document.getElementById(diceId);
-    this.target.textContent = "Dice";
+    this.target.textContent = "!";
   }
 
   rollDice() {
@@ -25,6 +25,6 @@ class Dice {
 
   resetDice() {
     this.target.disabled = false;
-    this.target.textContent = "Dice";
+    this.target.textContent = "!";
   }
 }
