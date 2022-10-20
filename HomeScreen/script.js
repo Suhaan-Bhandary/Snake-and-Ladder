@@ -2,7 +2,7 @@ const startBtn = document.getElementById("startBtn");
 startBtn.addEventListener("click", () => {
   let players = 5;
 
-  const origin = window.location.origin;
+  const origin = window.location.origin + "/Snake-and-Ladder";
   const redirectPath = "GameScreen/index.html";
   const data = `?players=${players}`;
 
